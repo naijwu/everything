@@ -1,17 +1,39 @@
 {
+  "files": [],
+  "references": [
+    { "path": "packages/shared" },
+    { "path": "packages/models" },
+    { "path": "packages/indexer" },
+    { "path": "packages/extractor" },
+    { "path": "packages/search" },
+    { "path": "apps/api" },
+    { "path": "apps/scheduler" },
+    { "path": "apps/workers/vision-embedder" }
+  ],
   "compilerOptions": {
+    "composite": true,
+    "moduleResolution": "Node",
+    "module": "ESNext",
     "target": "ES2022",
-    "module": "commonjs",
-    "lib": ["ES2022"],
-    "moduleResolution": "node",
-    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
     "strict": true,
-    "resolveJsonModule": true,
-    "declaration": true,
-    "outDir": "./dist",
-    "rootDir": "."
-  },
-  "exclude": ["node_modules", "dist"]
-}
+    "baseUrl": ".",
+    "paths": {
+      "@everything/shared": ["packages/shared/src/index.ts"],
+      "@everything/shared/*": ["packages/shared/src/*"],
 
+      "@everything/models": ["packages/models/src/index.ts"],
+      "@everything/models/*": ["packages/models/src/*"],
+
+      "@everything/indexer": ["packages/indexer/src/index.ts"],
+      "@everything/indexer/*": ["packages/indexer/src/*"],
+
+      "@everything/search": ["packages/search/src/index.ts"],
+      "@everything/search/*": ["packages/search/src/*"],
+
+      "@everything/extractor": ["packages/extractor/src/index.ts"],
+      "@everything/extractor/*": ["packages/extractor/src/*"]
+    }
+  }
+}

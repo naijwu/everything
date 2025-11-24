@@ -1,15 +1,14 @@
 {
   "name": "everything",
-  "version": "1.0.0",
   "private": true,
+  "version": "1.0.0",
+  "packageManager": "pnpm@9",
   "scripts": {
-    "dev": "pnpm --parallel --filter './apps/*' dev",
-    "build": "pnpm --filter './packages/*' build && pnpm --filter './apps/*' build",
-    "clean": "pnpm --parallel clean"
-  },
-  "devDependencies": {
-    "@types/node": "^20.0.0",
-    "typescript": "^5.3.0"
+    "dev:api": "pnpm --filter @everything/api dev",
+    "dev:scheduler": "pnpm --filter @everything/scheduler dev",
+    "dev:workers": "pnpm -r --filter \"@everything/worker-*\" dev",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck"
   }
 }
-
