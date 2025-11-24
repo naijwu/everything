@@ -1,8 +1,14 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "./dist",
+    "outDir": "dist",
+    "composite": true,
+    "esModuleInterop": true
   },
-  "include": ["src/**/*"]
+  "references": [
+    { "path": "../../packages/shared" },
+    { "path": "../../packages/search" },
+    { "path": "../../packages/indexer" }
+  ],
+  "include": ["src"]
 }
-

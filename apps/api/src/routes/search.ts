@@ -1,9 +1,6 @@
-import { Router } from 'express';
+import express from "express";
+import { searchController } from "../controllers/searchController";
 
-export const searchRouter = Router();
+export const searchRouter = express.Router();
 
-searchRouter.post('/', async (req, res) => {
-  // TODO: Implement search
-  res.json({ message: 'Search endpoint' });
-});
-
+searchRouter.get("/", searchController);
