@@ -1,22 +1,32 @@
-import { BaseModel, ModelConfig } from './base';
+// packages/models/src/siglip.ts
 
-export class SigLIPModel extends BaseModel {
-  constructor(config: ModelConfig) {
-    super(config);
+import { VisionTextEmbeddingModel } from "./base";
+
+/**
+ * Stub SigLIP/CLIP model.
+ * Replace with actual inference code later.
+ */
+export class SigLIPModel implements VisionTextEmbeddingModel {
+  constructor() {
+    console.log("SigLIP model initialized (stub)");
   }
 
-  async load(): Promise<void> {
-    console.log('Loading SigLIP model...');
-    // TODO: Implement model loading
+  async embedText(text: string): Promise<number[]> {
+    console.log("Embedding text:", text);
+    return new Array(1024).fill(0); // stub
   }
 
-  async unload(): Promise<void> {
-    console.log('Unloading SigLIP model...');
+  async embedImage(buffer: Buffer): Promise<number[]> {
+    console.log("Embedding image (stub)");
+    return new Array(1024).fill(0);
   }
 
-  async embed(image: Buffer): Promise<number[]> {
-    // TODO: Implement embedding
-    return [];
+  async embedFrames(buffers: Buffer[]): Promise<number[][]> {
+    console.log(`Embedding ${buffers.length} video frames (stub)`);
+    return buffers.map(() => new Array(1024).fill(0));
+  }
+
+  getDimension(): number {
+    return 1024;
   }
 }
-

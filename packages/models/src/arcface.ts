@@ -1,22 +1,16 @@
-import { BaseModel, ModelConfig } from './base';
+import { FaceEmbeddingModel } from "./base";
 
-export class ArcFaceModel extends BaseModel {
-  constructor(config: ModelConfig) {
-    super(config);
+export class ArcFaceModel implements FaceEmbeddingModel {
+  constructor() {
+    console.log("ArcFace model initialized (stub)");
   }
 
-  async load(): Promise<void> {
-    console.log('Loading ArcFace model...');
-    // TODO: Implement model loading
+  async embedFace(buffer: Buffer): Promise<number[]> {
+    console.log("Embedding face (stub)");
+    return new Array(512).fill(0);
   }
 
-  async unload(): Promise<void> {
-    console.log('Unloading ArcFace model...');
-  }
-
-  async detectFaces(image: Buffer): Promise<number[][]> {
-    // TODO: Implement face detection
-    return [];
+  getDimension(): number {
+    return 512;
   }
 }
-
