@@ -1,0 +1,20 @@
+name: Deploy Workers
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'apps/workers/**'
+      - 'packages/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Deploy to Railway
+        run: |
+          echo "Deploy Workers to Railway"
+          # Add Railway deployment commands here
+

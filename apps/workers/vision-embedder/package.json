@@ -1,0 +1,20 @@
+{
+  "name": "@everything/vision-embedder",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@everything/shared": "workspace:*",
+    "@everything/models": "workspace:*",
+    "dotenv": "^16.3.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.0"
+  }
+}
+
