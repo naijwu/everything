@@ -1,12 +1,16 @@
 # everything
 
-this app has two functional requirements:
+### functional requirements
 1. upload any media (video, image, audio, text files, zips -- w/out compression)
 2. search any media (via text, image, video)
 
-and one non-functional requirement:
+### non-functional requirement
 1. search is blazingly fast
 
-the plan:
+### the plan
 - all media (video, image, audio) will have vector embeddings for any quality that could want to be searched
 - user searches -> text search against any plaintext data (via elasticsearch) + text to vector via SigLIP2, compare similarity to any media with their vectors "indexed" -> fuse and rank
+
+### long long term roadmap
+ - [ ] create graph-based, lazy taxonomy, simple interfaced notes app (always wanted to build one for myself--fw for your digital twin/brain)
+ - [ ] create FFMPEG wrapper (w/ wasm) to enable editing and conversions of multimedia in-app
